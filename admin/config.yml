@@ -1,0 +1,38 @@
+backend:
+  name: github
+  repo: lithiumpin-vn/pin-site
+  branch: main
+  auth_type: pkce
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "category"
+    label: "Danh mục (类目)"
+    folder: "_content/categories"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Tên danh mục 类目名", name: "title", widget: "string"}
+      - {label: "Mô tả 描述", name: "desc", widget: "text"}
+      - {label: "Hình ảnh 类目图", name: "image", widget: "image"}
+      - {label: "Slug(链接英文，如18650)", name: "slug", widget: "string"}
+
+  - name: "product"
+    label: "Sản phẩm (产品)"
+    folder: "_content/products"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Thuộc danh mục 归属类目slug", name: "cat", widget: "string"}
+      - {label: "Tên sản phẩm 产品名", name: "title", widget: "string"}
+      - {label: "Hình ảnh 产品图", name: "image", widget: "image"}
+      - {label: "Điện áp 电压", name: "volt", widget: "string"}
+      - {label: "Dung lượng 容量", name: "cap", widget: "string"}
+      - {label: "Điện trở trong 内阻", name: "res", widget: "string"}
+      - {label: "Chứng chỉ 证书", name: "cert", widget: "string"}
+      - {label: "Mô tả chi tiết 详情", name: "desc", widget: "markdown"}
+      - {label: "Slug", name: "slug", widget: "string"}
